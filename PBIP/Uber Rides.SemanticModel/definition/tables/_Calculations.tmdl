@@ -2,7 +2,7 @@ table _Calculations
 	lineageTag: ef7af1f4-2030-4936-84ae-490063667ad8
 
 	measure 'Non-Completed Bookings' = ```
-
+			
 			CALCULATE(
 				[Total Bookings],
 				'Rides'[Booking Status] <>  "Completed" 
@@ -25,8 +25,8 @@ table _Calculations
 		lineageTag: 432de796-06b5-4bc1-9694-78249376996d
 
 	measure 'Total Booking Value' = ```
-
-
+			
+			
 				SUM('Rides'[Booking Value])
 			```
 		formatString: "₹"#,0;#,0\ -"₹";"₹"#,0
@@ -53,13 +53,13 @@ table _Calculations
 		lineageTag: 0155235a-9b05-4888-af40-793f3eeb013e
 
 	measure 'Avg of Vehicle-Type Avg Ride Distance' = ```
-
+			
 			    AVERAGEX(
 			        SUMMARIZE(Rides, Rides[Vehicle Type]),
 			        CALCULATE(AVERAGE(Rides[Ride Distance]))
 			    )
-
-
+			
+			
 			```
 		formatString: 0
 		displayFolder: Distance
@@ -71,7 +71,7 @@ table _Calculations
 		lineageTag: 161c6916-9824-451a-9994-2f75c46a2951
 
 	measure 'Avg Revenue per Completed Booking' =
-
+			
 			DIVIDE( [Total Booking Value], ([Total Bookings] - [Non-Completed Bookings] ) )
 		formatString: "₹"#,0;#,0\ -"₹";"₹"#,0
 		displayFolder: Revenue
@@ -90,3 +90,4 @@ table _Calculations
 				    #"Removed Columns"
 
 	annotation PBI_ResultType = Table
+
