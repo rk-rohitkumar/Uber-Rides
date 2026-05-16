@@ -1,0 +1,84 @@
+table Profile_Locations
+	lineageTag: 86721177-96b7-47fd-a23c-fb3fe54985cd
+
+	column Column
+		dataType: string
+		lineageTag: e5de0e56-bc7e-4613-b554-9ee109a0259b
+		summarizeBy: none
+		sourceColumn: Column
+
+		annotation SummarizationSetBy = Automatic
+
+	column Min
+		dataType: string
+		lineageTag: f43f695b-7e02-4cf7-b035-4ea715dc7c9a
+		summarizeBy: none
+		sourceColumn: Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column Max
+		dataType: string
+		lineageTag: 18e1c38d-c55b-46c8-a994-0bf48f6b59c3
+		summarizeBy: none
+		sourceColumn: Max
+
+		annotation SummarizationSetBy = Automatic
+
+	column Average
+		dataType: string
+		lineageTag: 02492162-4625-4858-a6ac-13ae2cb45e96
+		summarizeBy: none
+		sourceColumn: Average
+
+		annotation SummarizationSetBy = Automatic
+
+	column StandardDeviation
+		dataType: double
+		lineageTag: 28702c28-27f3-4f2b-85e7-9a1b5a0df9f5
+		summarizeBy: sum
+		sourceColumn: StandardDeviation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Count
+		dataType: double
+		lineageTag: 616c6e5e-e072-4e86-ab1e-fcaf349b16ba
+		summarizeBy: sum
+		sourceColumn: Count
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NullCount
+		dataType: string
+		lineageTag: 0df32708-da67-4b4a-a5b3-cb0ffa4ef5b5
+		summarizeBy: none
+		sourceColumn: NullCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistinctCount
+		dataType: string
+		lineageTag: e57fcf02-b033-493a-981e-9cdd984a5861
+		summarizeBy: none
+		sourceColumn: DistinctCount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Profile_Locations = m
+		mode: import
+		queryGroup: Final
+		source =
+				let
+				    Source = Table.Profile( Locations )
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,6 +1,6 @@
-expression Source =
+expression RidesSource =
 		let
-		    Source = Csv.Document(File.Contents("C:\Users\rohit\Downloads\ncr_ride_bookings.csv"),[Delimiter=",", Columns=21, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    Source = Csv.Document(File.Contents(pRidesData),[Delimiter=",", Columns=21, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Time", type time}, {"Booking ID", type text}, {"Booking Status", type text}, {"Customer ID", type text}, {"Vehicle Type", type text}, {"Pickup Location", type text}, {"Drop Location", type text}, {"Avg VTAT", type number}, {"Avg CTAT", type number}, {"Cancelled Rides by Customer", Int64.Type}, {"Reason for cancelling by Customer", type text}, {"Cancelled Rides by Driver", Int64.Type}, {"Driver Cancellation Reason", type text}, {"Incomplete Rides", Int64.Type}, {"Incomplete Rides Reason", type text}, {"Booking Value", Int64.Type}, {"Ride Distance", type number}, {"Driver Ratings", type number}, {"Customer Rating", type number}, {"Payment Method", type text}})
 		in
@@ -14,7 +14,7 @@ expression Source =
 
 expression Location-Region-Latitude-Longitude =
 		let
-		    Source = Csv.Document(File.Contents("C:\Users\rohit\Downloads\Location-Region-Latitude-Longitude.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    Source = Csv.Document(File.Contents( pLocationData ),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Location", type text}, {"Region", type text}, {"Latitude", type number}, {"Longitude", type number}}),
 		    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"Location"}),
@@ -43,7 +43,7 @@ expression Locations_Blank =
 
 expression 'Location-Region-Latitude-Longitude (1)' =
 		let
-		    Source = Csv.Document(File.Contents("C:\Users\rohit\Downloads\Location-Region-Latitude-Longitude (1).csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    Source = Csv.Document(File.Contents( pLocationData1 ),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Location", type text}, {"Region", type text}, {"Latitude", type number}, {"Longitude", type number}}),
 		    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"Location"})
@@ -87,7 +87,7 @@ expression EnrichedData =
 
 expression CleanedData =
 		let
-		    Source = Source,
+		    Source = RidesSource,
 		    #"Replaced Value" = Table.ReplaceValue(Source,"""","",Replacer.ReplaceText,{"Booking ID", "Customer ID"}),
 		    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value",null,0,Replacer.ReplaceValue,{"Cancelled Rides by Customer", "Cancelled Rides by Driver", "Incomplete Rides"})
 		in
@@ -98,4 +98,29 @@ expression CleanedData =
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
+
+/// file path of location details
+expression pRidesData = "C:\Users\rohit\Downloads\ncr_ride_bookings.csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: fc86902b-ca01-4d64-8abd-4fc3a04bbeac
+	queryGroup: Parameters
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression pLocationData = "C:\Users\rohit\OneDrive\PowerBI\Uber Rides\DataSource\Location-Region-Latitude-Longitude.csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d7b8b0eb-f60a-4813-88de-39409c028f96
+	queryGroup: Parameters
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression pLocationData1 = "C:\Users\rohit\OneDrive\PowerBI\Uber Rides\DataSource\Location-Region-Latitude-Longitude (1).csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: c0141edf-bd3b-48ee-aa73-ef9ea1e5ebaa
+	queryGroup: Parameters
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
 
