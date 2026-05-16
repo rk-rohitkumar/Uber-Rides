@@ -1,28 +1,23 @@
 # Project Overview
 
 ## Purpose
-This Power BI report shows analysis of UBER rides in Delhi NCR region during the year 2024.
+This Power BI report shows analysis of UBER rides in Delhi NCR region during the year 2024, adhering to strict data integrity and single-page consolidation rules.
 
-## Data Sources
-- Source 1 – Uber ride data downloaded from the internet.
-- Source 2 – location details downloaded from the internet.
+## Data Sources & Pipeline
+1. **Raw Data:** Extracted from CSV files located in `DataSource/` (e.g., `ncr_ride_bookings.csv`, Location data).
+2. **Semantic Model:** The report is built upon the structured semantic model found in `PBIP/Uber Rides.SemanticModel/`. This model links Fact tables (`Rides`) to Dimension tables (`Locations`).
+3. **Report Visuals:** Visualizations are defined by JSON files located in `PBIP/Uber Rides.Report/definition/pages/*/visuals/`.
 
-## Report Pages
-- Main – Main page to view all analysis.
+## Data Model Details
+- **Fact Table:** `Rides` (Transactional data).
+- **Dimension Table:** `Locations` (Geographical details).
 
+## Key Measures & Report Logic
+The report relies on measures defined within the semantic model, which are directly linked to the following calculations:
+- **Total Bookings:** `DISTINCTCOUNT(Rides[Booking ID])`
+- **Booking Value:** `SUM('Rides'[Booking Value])`
+- **Completion Rate:** Calculated based on status filtering within the Fact table.
 
-## Model Notes
-- Fact table - Rides.
-- Dimension - Locations
-- Main Measures - 
-    - '# Total Bookings = DISTINCTCOUNT(Rides[Booking ID])'
-    - '$ Booking value = 
-
-	SUM('Rides'[Booking Value])'
-    - '# Bookings not Completed = 
-CALCULATE(
-	[# Total Bookings],
-	'Rides'[Booking Status] <>  "Completed" 
-)'
-    - 'Average revenue for completed rides'  
+## Business Rules & Constraints
+All report design adheres to the constraints specified in `docs/business-rules.md`, prioritizing Single-Page Consolidation and data integrity.
 
