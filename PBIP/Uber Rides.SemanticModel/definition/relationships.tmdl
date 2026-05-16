@@ -1,9 +1,0 @@
-relationship 86276238-1a75-41e0-8d2e-b530b54e520b
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Rides.Date
-	toColumn: LocalDateTable_ecc654a2-2a0b-4b5d-a532-51f9e8a12f01.Date
-
-relationship b506ebc7-4b2a-3928-310b-135e1d34404d
-	fromColumn: Rides.'Drop.LocationKey'
-	toColumn: Locations.LocationKey
-
