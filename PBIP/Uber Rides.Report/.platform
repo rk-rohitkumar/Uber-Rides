@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Uber Rides"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0950963b-8f17-46c2-9200-f8e29440d1df"
+  }
+}

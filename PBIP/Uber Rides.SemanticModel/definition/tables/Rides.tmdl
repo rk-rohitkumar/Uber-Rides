@@ -1,0 +1,214 @@
+table Rides
+	lineageTag: d6bb245a-a4d6-43ab-90e2-cebbef74a055
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fb518930-8ec6-46f5-aeed-cdbb40a5cc1f
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 86276238-1a75-41e0-8d2e-b530b54e520b
+			defaultHierarchy: LocalDateTable_ecc654a2-2a0b-4b5d-a532-51f9e8a12f01.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 4f49174b-1a56-413b-adc9-d65bebae232d
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Booking ID'
+		dataType: string
+		lineageTag: e3120562-ff2b-4d25-a2ca-00c89f7cdbe0
+		summarizeBy: none
+		sourceColumn: Booking ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking Status'
+		dataType: string
+		lineageTag: 33a57e02-ab48-46a9-a836-13a93d060260
+		summarizeBy: none
+		sourceColumn: Booking Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: d57d55eb-c8be-47c9-bd53-f020e19ed449
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vehicle Type'
+		dataType: string
+		lineageTag: 326959b2-5e05-44de-b2d1-1753d6aedb0d
+		summarizeBy: none
+		sourceColumn: Vehicle Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avg VTAT'
+		dataType: double
+		lineageTag: 86539b7f-20e5-4c3c-b7dc-29d91d3947b5
+		summarizeBy: sum
+		sourceColumn: Avg VTAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Avg CTAT'
+		dataType: double
+		lineageTag: 63ee6752-b0e5-44fe-b4ff-169c4810b863
+		summarizeBy: sum
+		sourceColumn: Avg CTAT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Rides by Customer'
+		dataType: double
+		lineageTag: 317d8b4b-6ca4-4185-a1d6-9c3bc8abda09
+		summarizeBy: sum
+		sourceColumn: Cancelled Rides by Customer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reason for cancelling by Customer'
+		dataType: string
+		lineageTag: 2135db7c-037d-4f44-9abc-5ba952690083
+		summarizeBy: none
+		sourceColumn: Reason for cancelling by Customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancelled Rides by Driver'
+		dataType: double
+		lineageTag: 9fb77526-2083-49db-ab47-cb7cb0146763
+		summarizeBy: sum
+		sourceColumn: Cancelled Rides by Driver
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Driver Cancellation Reason'
+		dataType: string
+		lineageTag: 760b78e1-8331-43da-a7a6-15cd1fed12c4
+		summarizeBy: none
+		sourceColumn: Driver Cancellation Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incomplete Rides'
+		dataType: double
+		lineageTag: f050c54d-5667-4b70-a9fb-f2524354421a
+		summarizeBy: sum
+		sourceColumn: Incomplete Rides
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Incomplete Rides Reason'
+		dataType: string
+		lineageTag: 928fc8e8-6e9b-48e1-a1f8-2f98bf08e698
+		summarizeBy: none
+		sourceColumn: Incomplete Rides Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Booking Value'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d71f994-9cfe-446b-932f-ddd6fdd17bf0
+		summarizeBy: sum
+		sourceColumn: Booking Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ride Distance'
+		dataType: double
+		lineageTag: dc1eceeb-b115-4ac0-bdbb-06ae928a5c63
+		summarizeBy: sum
+		sourceColumn: Ride Distance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Driver Ratings'
+		dataType: double
+		lineageTag: dea58f00-fd7e-43e7-a396-736cbded6840
+		summarizeBy: sum
+		sourceColumn: Driver Ratings
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Rating'
+		dataType: double
+		lineageTag: 2d061db9-cb44-4bb2-93c3-a432e3a63307
+		summarizeBy: sum
+		sourceColumn: Customer Rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Payment Method'
+		dataType: string
+		lineageTag: 0e4f2ed2-4538-48d7-a083-13422acf1f63
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pickup.LocationKey'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8261c935-025c-498f-a6a0-5e4395a4cead
+		summarizeBy: count
+		sourceColumn: Pickup.LocationKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Drop.LocationKey'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8365b18a-6dad-4893-98ad-b6cfe4ecfc5b
+		summarizeBy: none
+		sourceColumn: Drop.LocationKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Rides = m
+		mode: import
+		queryGroup: Final
+		source =
+				let
+				    Source = EnrichedData
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

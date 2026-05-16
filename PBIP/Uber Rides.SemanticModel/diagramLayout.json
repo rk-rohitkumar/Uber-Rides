@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 457.35820895522386,
+        "y": 193.61194029850748
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 227,
+            "y": 12
+          },
+          "nodeIndex": "Locations",
+          "nodeLineageTag": "28517119-6398-469a-a219-ee3a4824e4c7",
+          "size": {
+            "height": 236,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 55
+          },
+          "nodeIndex": "Rides",
+          "nodeLineageTag": "d6bb245a-a4d6-43ab-90e2-cebbef74a055",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 832,
+            "y": 544.75373134328356
+          },
+          "nodeIndex": "_Calculations",
+          "nodeLineageTag": "ef7af1f4-2030-4936-84ae-490063667ad8",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 3
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 97.101449275362313,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
