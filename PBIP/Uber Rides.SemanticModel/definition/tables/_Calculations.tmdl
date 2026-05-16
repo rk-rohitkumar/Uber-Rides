@@ -1,0 +1,92 @@
+table _Calculations
+	lineageTag: ef7af1f4-2030-4936-84ae-490063667ad8
+
+	measure 'Non-Completed Bookings' = ```
+
+			CALCULATE(
+				[Total Bookings],
+				'Rides'[Booking Status] <>  "Completed" 
+			)
+			```
+		formatString: 0
+		displayFolder: Bookings
+		lineageTag: 9d38af6a-7a7e-4b55-b5e6-4dc4d2def093
+
+	/// Short description: Distinct count of booking IDs.
+	/// Purpose: Counts unique bookings in the current filter context.
+	/// Notes:
+	/// Uses DISTINCTCOUNT(Rides[Booking ID]).
+	/// Respects page/report filters and slicers.
+	/// If Booking ID is blank, blanks are counted once.
+	/// Assumes each booking ID uniquely identifies a booking.
+	measure 'Total Bookings' = DISTINCTCOUNT(Rides[Booking ID])
+		formatString: #,0
+		displayFolder: Bookings
+		lineageTag: 432de796-06b5-4bc1-9694-78249376996d
+
+	measure 'Total Booking Value' = ```
+
+
+				SUM('Rides'[Booking Value])
+			```
+		formatString: "₹"#,0;#,0\ -"₹";"₹"#,0
+		displayFolder: Revenue
+		lineageTag: 5e777f0c-4d2d-4d12-8c8a-555c8e8476fd
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "TotalForSelectedCategory"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"mr-IN"}
+
+	measure 'Non-Completion Rate' =
+			DIVIDE(
+				[Non-Completed Bookings],
+				[Total Bookings]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Bookings
+		lineageTag: 0155235a-9b05-4888-af40-793f3eeb013e
+
+	measure 'Avg of Vehicle-Type Avg Ride Distance' = ```
+
+			    AVERAGEX(
+			        SUMMARIZE(Rides, Rides[Vehicle Type]),
+			        CALCULATE(AVERAGE(Rides[Ride Distance]))
+			    )
+
+
+			```
+		formatString: 0
+		displayFolder: Distance
+		lineageTag: 8865a0ad-a3ce-48e0-a9b9-225311746861
+
+	measure 'Total Ride Distance (KM)' = SUM( Rides[Ride Distance] )
+		formatString: #,0.0
+		displayFolder: Distance
+		lineageTag: 161c6916-9824-451a-9994-2f75c46a2951
+
+	measure 'Avg Revenue per Completed Booking' =
+
+			DIVIDE( [Total Booking Value], ([Total Bookings] - [Non-Completed Bookings] ) )
+		formatString: "₹"#,0;#,0\ -"₹";"₹"#,0
+		displayFolder: Revenue
+		lineageTag: c3249050-529d-498f-944e-6daeca8a51d7
+
+		annotation PBI_FormatHint = {"currencyCulture":"mr-IN"}
+
+	partition _Calculations = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
