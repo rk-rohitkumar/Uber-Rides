@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "c66c830ceb6e7c59fe94",
+  "name": "fc4eb8f0aebab2643d87",
   "position": {
-    "x": 24,
-    "y": 541,
-    "z": 1,
-    "height": 457,
-    "width": 1228,
-    "tabOrder": 1
+    "x": 80,
+    "y": 1032.7272727272727,
+    "z": 1000,
+    "height": 406.36363636363632,
+    "width": 571.81818181818176,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "hundredPercentStackedBarChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -39,14 +39,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Rides"
+                      "Entity": "Locations"
                     }
                   },
-                  "Property": "Booking Status"
+                  "Property": "Region Group"
                 }
               },
-              "queryRef": "Rides.Booking Status",
-              "nativeQueryRef": "Booking Status"
+              "queryRef": "Locations.Region Group",
+              "nativeQueryRef": "Region Group"
             }
           ]
         },
@@ -60,11 +60,11 @@
                       "Entity": "_Calculations"
                     }
                   },
-                  "Property": "Total Bookings"
+                  "Property": "Total Booking Value"
                 }
               },
-              "queryRef": "_Calculations.Total Bookings",
-              "nativeQueryRef": "Total Bookings"
+              "queryRef": "_Calculations.Total Booking Value",
+              "nativeQueryRef": "Total Booking Value"
             }
           ]
         }
@@ -79,12 +79,13 @@
                     "Entity": "_Calculations"
                   }
                 },
-                "Property": "Total Bookings"
+                "Property": "Total Booking Value"
               }
             },
             "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -120,26 +121,57 @@
             }
           }
         }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B08D72'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Bookings by Payment Method'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "fc4b7ec99bc9c6456506",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Total Bookings"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "5ae1e0b3486ee7244eec",
         "field": {
@@ -211,20 +243,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "97a3052620196a17bd46",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Rides"
-              }
-            },
-            "Property": "Booking Status"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

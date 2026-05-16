@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "62a2635eae865b499516",
+  "name": "6fb0c8a717277f70c21a",
   "position": {
-    "x": 24.423243712055509,
-    "y": 1687.4241110147441,
-    "z": 3,
-    "height": 586.15784908933222,
-    "width": 1227.8230702515177,
-    "tabOrder": 3
+    "x": 651.81818181818176,
+    "y": 476.36363636363632,
+    "z": 2000,
+    "height": 490.90909090909088,
+    "width": 598.18181818181813,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "barChart",
@@ -32,6 +32,24 @@
             }
           ]
         },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Locations"
+                    }
+                  },
+                  "Property": "Region Group"
+                }
+              },
+              "queryRef": "Locations.Region Group",
+              "nativeQueryRef": "Region Group"
+            }
+          ]
+        },
         "Y": {
           "projections": [
             {
@@ -42,11 +60,11 @@
                       "Entity": "_Calculations"
                     }
                   },
-                  "Property": "Non-Completion Rate"
+                  "Property": "Total Booking Value"
                 }
               },
-              "queryRef": "_Calculations.Non-Completion Rate",
-              "nativeQueryRef": "Non-Completion Rate"
+              "queryRef": "_Calculations.Total Booking Value",
+              "nativeQueryRef": "Total Booking Value"
             }
           ]
         }
@@ -61,7 +79,7 @@
                     "Entity": "_Calculations"
                   }
                 },
-                "Property": "Non-Completion Rate"
+                "Property": "Total Booking Value"
               }
             },
             "direction": "Descending"
@@ -183,9 +201,90 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B08D72'"
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       ],
       "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "enableDetailDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "detailLabelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "dynamicLabelDetail": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Completion Rate"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "highlightMatching": 1
+          }
+        }
+      ],
+      "valueAxis": [
         {
           "properties": {
             "showAxisTitle": {
@@ -215,37 +314,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "52bdb05d921c6a71b0b9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Locations"
-              }
-            },
-            "Property": "Region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "cd53d9fbdc08fcb24b9c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Non-Completion Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

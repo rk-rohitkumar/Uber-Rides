@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "Net_Revenue_KPI_Card",
   "position": {
-    "x": 24.192439862542955,
-    "y": 73.676975945017176,
+    "x": 26.363636363636367,
+    "y": 92.727272727272734,
     "z": 0,
-    "height": 457.45704467353949,
-    "width": 1228.3161512027491,
+    "height": 392.72727272727269,
+    "width": 1234.5454545454545,
     "tabOrder": 0
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "_Calculations"
                     }
                   },
-                  "Property": "Total Ride Distance (KM)"
+                  "Property": "Total Booking Value"
                 }
               },
-              "queryRef": "_Calculations.KM Ride Distance",
-              "nativeQueryRef": "Total Ride Distance (KM)"
+              "queryRef": "_Calculations.$ Booking value",
+              "nativeQueryRef": "Total Booking Value"
             },
             {
               "field": {
@@ -51,11 +51,11 @@
                       "Entity": "_Calculations"
                     }
                   },
-                  "Property": "Total Booking Value"
+                  "Property": "Total Ride Distance (KM)"
                 }
               },
-              "queryRef": "_Calculations.$ Booking value",
-              "nativeQueryRef": "Total Booking Value"
+              "queryRef": "_Calculations.KM Ride Distance",
+              "nativeQueryRef": "Total Ride Distance (KM)"
             }
           ]
         }
@@ -70,7 +70,7 @@
                     "Entity": "_Calculations"
                   }
                 },
-                "Property": "Total Ride Distance (KM)"
+                "Property": "Total Booking Value"
               }
             },
             "direction": "Descending"
@@ -677,51 +677,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "58b6bc1fc9de4d93a0f6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Total Bookings"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b1804c3f4f429d9d5424",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Total Ride Distance (KM)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4465259653ef998b3519",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Total Booking Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

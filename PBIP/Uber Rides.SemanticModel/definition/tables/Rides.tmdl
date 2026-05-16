@@ -30,9 +30,12 @@ table Rides
 
 	column 'Booking ID'
 		dataType: string
+		isHidden
 		lineageTag: e3120562-ff2b-4d25-a2ca-00c89f7cdbe0
 		summarizeBy: none
 		sourceColumn: Booking ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

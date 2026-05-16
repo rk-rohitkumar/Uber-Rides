@@ -7,3 +7,8 @@ relationship b506ebc7-4b2a-3928-310b-135e1d34404d
 	fromColumn: Rides.'Drop.LocationKey'
 	toColumn: Locations.LocationKey
 
+relationship ea118ac1-d3cf-8ea4-3358-fb199eff0dee
+	isActive: false
+	fromColumn: Rides.'Pickup.LocationKey'
+	toColumn: Locations.LocationKey
+

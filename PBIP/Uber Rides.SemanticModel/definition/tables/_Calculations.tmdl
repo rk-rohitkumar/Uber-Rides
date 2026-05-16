@@ -99,6 +99,50 @@ table _Calculations
 		displayFolder: Bookings
 		lineageTag: 6caa1784-f18c-4a26-b823-76e6e8714561
 
+	measure 'Total Booking value by pick up location' =
+			
+			CALCULATE( [Total Booking Value], USERELATIONSHIP( Locations[LocationKey], Rides[Pickup.LocationKey] ) )
+		formatString: 0
+		displayFolder: Revenue
+		lineageTag: bb4388d0-25be-44b7-8813-76e47f2ee42b
+
+	measure 'Region with maximum booking value' = ```
+			
+			
+			VAR RegionTotals = 
+			    -- Calculate Total Booking Value for every distinct Region
+			    SUMMARIZE(
+			        Locations, -- Assuming this is your Location table
+			        Locations[Region],
+			        "TotalBookingValue", SUM('Rides'[Booking Value]) -- Link to the Fact table
+			    )
+			
+			VAR MaxBookingValue = 
+			    -- Find the maximum Total Booking Value among all regions
+			    MAXX(
+			        RegionTotals,
+			        [TotalBookingValue]
+			    )
+			
+			VAR ResultRegion = 
+			    -- Filter the table to find the Region(s) that match the Max Booking Value
+			    MAXX(
+			        RegionTotals,
+			        IF(
+			            [TotalBookingValue] = MaxBookingValue,
+			            'Locations'[Region],
+			            BLANK() -- Return blank for all others
+			        )
+			    )
+			
+			RETURN
+			    -- Return the Region Name
+			    ResultRegion
+			
+			```
+		displayFolder: Revenue
+		lineageTag: dd74a84d-9d74-414f-8b11-119d205eac26
+
 	partition _Calculations = m
 		mode: import
 		source =

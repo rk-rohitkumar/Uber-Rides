@@ -1,43 +1,59 @@
 table Profile_Rides
+	isHidden
 	lineageTag: 5659a889-74cb-40e2-8017-a4fb8c16af5c
 
 	column Column
 		dataType: string
+		isHidden
 		lineageTag: 28c048e3-0277-45c3-be62-25c61ba47911
 		summarizeBy: none
 		sourceColumn: Column
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Min
 		dataType: string
+		isHidden
 		lineageTag: e37ff158-ab05-4097-9522-cac8fef2b122
 		summarizeBy: none
 		sourceColumn: Min
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Max
 		dataType: string
+		isHidden
 		lineageTag: f0132f08-8c35-4c55-956d-a558045ecd33
 		summarizeBy: none
 		sourceColumn: Max
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Average
 		dataType: string
+		isHidden
 		lineageTag: 25678d43-1527-4e82-90e9-1ef88040980a
 		summarizeBy: none
 		sourceColumn: Average
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column StandardDeviation
 		dataType: double
+		isHidden
 		lineageTag: 028eaec8-bc47-4b2d-aa16-e583ae4d38c9
 		summarizeBy: sum
 		sourceColumn: StandardDeviation
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -45,9 +61,12 @@ table Profile_Rides
 
 	column Count
 		dataType: double
+		isHidden
 		lineageTag: 53d51e97-0645-4bca-8703-355c578eb038
 		summarizeBy: sum
 		sourceColumn: Count
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -55,17 +74,23 @@ table Profile_Rides
 
 	column NullCount
 		dataType: string
+		isHidden
 		lineageTag: 8d730c66-847a-4fa9-9a10-9c729feb060d
 		summarizeBy: none
 		sourceColumn: NullCount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column DistinctCount
 		dataType: string
+		isHidden
 		lineageTag: 43b5ccc9-8b97-40fe-9080-49db3a3addb5
 		summarizeBy: none
 		sourceColumn: DistinctCount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -77,6 +102,8 @@ table Profile_Rides
 				    Source = Table.Profile( Rides )
 				in
 				    Source
+
+	changedProperty = IsHidden
 
 	annotation PBI_NavigationStepName = Navigation
 

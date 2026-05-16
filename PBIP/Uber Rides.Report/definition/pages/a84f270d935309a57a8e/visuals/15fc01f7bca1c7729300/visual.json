@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "15fc01f7bca1c7729300",
+  "position": {
+    "x": 80,
+    "y": 461.81818181818176,
+    "z": 4000,
+    "height": 116.36363636363636,
+    "width": 516.36363636363637,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Best_Region"
+                      }
+                    }
+                  },
+                  {
+                    "value": " is the best performing region. Most rides end up here."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "_",
+                                "Entity": "_Calculations",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "_"
+                                    }
+                                  },
+                                  "Property": "Region with maximum booking value"
+                                },
+                                "Name": "_Calculations.Region with maximum booking value"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "_Calculations.Region with maximum booking value"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Best_Region",
+                      "utterance": "Region with maximum booking value"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Best_Region"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -11,10 +11,13 @@ table Locations
 
 	column LocationKey
 		dataType: int64
+		isHidden
 		formatString: 0
 		lineageTag: 92101653-7f7e-4595-b4ea-7ea7a4debde0
 		summarizeBy: none
 		sourceColumn: LocationKey
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -46,19 +49,34 @@ table Locations
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Region Group'
+		dataType: string
+		lineageTag: eca47dd8-cb10-40da-b52e-02192f3a4656
+		summarizeBy: none
+		sourceColumn: Region Group
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Locations = m
 		mode: import
 		queryGroup: Final
-		source =
+		source = ```
 				let
 				    Source = List.Distinct( List.Combine( {CleanedData[Pickup Location], CleanedData[Pickup Location]}) ),
 				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-				    #"Added Index" = Table.AddIndexColumn(#"Converted to Table", "LocationKey", 0, 1, Int64.Type),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type text}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Changed Type", "LocationKey", 0, 1, Int64.Type),
 				    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"Column1", "Location"}}),
 				    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"Location"}, #"Location-Region-Latitude-Longitude", {"Location"}, "Location-Region-Latitude-Longitude", JoinKind.LeftOuter),
-				    #"Expanded Location-Region-Latitude-Longitude" = Table.ExpandTableColumn(#"Merged Queries", "Location-Region-Latitude-Longitude", {"Region", "Latitude", "Longitude"}, {"Region", "Latitude", "Longitude"})
+				    #"Expanded Location-Region-Latitude-Longitude" = Table.ExpandTableColumn(#"Merged Queries", "Location-Region-Latitude-Longitude", {"Region", "Latitude", "Longitude"}, {"Region", "Latitude", "Longitude"}),
+				    #"Added Custom" = Table.AddColumn(#"Expanded Location-Region-Latitude-Longitude", "Region Group", each if 
+				Text.Contains( [Region], "Delhi" ) then "Delhi" else if
+				Text.Contains( [Region], "Gurgaon" ) then "Gurgaon" else if
+				Text.Contains( [Region], "Noida" ) then "Noida" else
+				"Other", type text)
 				in
-				    #"Expanded Location-Region-Latitude-Longitude"
+				    #"Added Custom"
+				```
 
 	annotation PBI_NavigationStepName = Navigation
 
