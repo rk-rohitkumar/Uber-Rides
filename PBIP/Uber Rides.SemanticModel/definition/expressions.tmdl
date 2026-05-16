@@ -75,9 +75,10 @@ expression DenormalisedData =
 
 expression EnrichedData =
 		let
-		    Source = DenormalisedData
+		    Source = DenormalisedData,
+		    #"Added Custom" = Table.AddColumn(Source, "Is completed", each [Booking Status] = "Completed", Logical.Type)
 		in
-		    Source
+		    #"Added Custom"
 	lineageTag: c26facb4-4a2d-49c8-90cb-80fef572d2b6
 	queryGroup: Transformations
 

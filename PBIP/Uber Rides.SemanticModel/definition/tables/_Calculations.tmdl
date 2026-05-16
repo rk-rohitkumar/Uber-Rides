@@ -79,6 +79,26 @@ table _Calculations
 
 		annotation PBI_FormatHint = {"currencyCulture":"mr-IN"}
 
+	measure 'Completed Bookings' = ```
+			
+			CALCULATE(
+				[Total Bookings],
+				'Rides'[Booking Status] =  "Completed" 
+			)
+			```
+		formatString: 0
+		displayFolder: Bookings
+		lineageTag: 8d62b59d-0c37-4818-8587-8c6ca58cb111
+
+	measure 'Completion Rate' =
+			DIVIDE(
+				[Completed Bookings],
+				[Total Bookings]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Bookings
+		lineageTag: 6caa1784-f18c-4a26-b823-76e6e8714561
+
 	partition _Calculations = m
 		mode: import
 		source =

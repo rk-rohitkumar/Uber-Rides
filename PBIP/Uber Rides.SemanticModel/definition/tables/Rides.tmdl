@@ -199,6 +199,15 @@ table Rides
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Is completed'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 74dc989a-56a7-4ae0-8072-c76da477d865
+		summarizeBy: none
+		sourceColumn: Is completed
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Rides = m
 		mode: import
 		queryGroup: Final

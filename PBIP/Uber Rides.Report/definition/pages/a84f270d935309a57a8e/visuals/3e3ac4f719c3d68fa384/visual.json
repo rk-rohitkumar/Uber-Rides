@@ -430,7 +430,7 @@
                       "Entity": "_Calculations"
                     }
                   },
-                  "Property": "Non-Completion Rate"
+                  "Property": "Completion Rate"
                 }
               }
             }
