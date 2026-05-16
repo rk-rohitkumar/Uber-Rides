@@ -1,0 +1,22 @@
+Column,Min,Max,Average,StandardDeviation,Count,NullCount,DistinctCount
+Avg CTAT,10,45,29.14963627,8.902577244,150000,48000,352
+Avg VTAT,2,20,8.456351971,3.773563826,150000,10500,182
+Booking ID,CNR1000037,CNR9999933,,,150000,0,148767
+Booking Status,Cancelled by Customer,No Driver Found,,,150000,0,5
+Booking Value,50,4277,508.2959118,395.805774,150000,48000,2567
+Cancelled Rides by Customer,0,1,0.07,0.255147867,150000,0,2
+Cancelled Rides by Driver,0,1,0.18,0.384188735,150000,0,2
+Customer ID,CID1000119,CID9999850,,,150000,0,148788
+Customer Rating,3,5,4.404583871,0.437818733,150000,57000,22
+Date,01-01-2024,30-12-2024,30-06-2024,,150000,0,365
+Driver Cancellation Reason,Customer related issue,null,,,150000,0,5
+Driver Ratings,3,5,4.230992473,0.436871469,150000,57000,22
+Drop.LocationKey,0,175,87.50634,50.80258031,150000,0,176
+Incomplete Rides,0,1,0.06,0.237487633,150000,0,2
+Incomplete Rides Reason,Customer Demand,null,,,150000,0,4
+Payment Method,Cash,null,,,150000,0,6
+Pickup.LocationKey,0,175,87.57322667,50.80095842,150000,0,176
+Reason for cancelling by Customer,AC is not working,null,,,150000,0,6
+Ride Distance,1,50,24.63701167,14.00213832,150000,48000,4902
+Time,00:00:00,23:59:59,,,150000,0,62910
+Vehicle Type,Auto,eBike,,,150000,0,7
