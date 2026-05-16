@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "Net_Revenue_KPI_Card",
   "position": {
-    "x": 26.363636363636367,
-    "y": 92.727272727272734,
-    "z": 0,
-    "height": 392.72727272727269,
-    "width": 1234.5454545454545,
+    "x": 22,
+    "y": 54,
+    "z": 6500,
+    "height": 383,
+    "width": 1235,
     "tabOrder": 0
   },
   "visual": {
@@ -378,20 +378,7 @@
       ],
       "referenceLabel": [
         {
-          "properties": {
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Calculations"
-                    }
-                  },
-                  "Property": "Avg Ride Distance by Vehicle Type"
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -564,6 +551,49 @@
             "id": "default"
           }
         }
+      ],
+      "smallMultiplesLayout": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "autoGrid": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "smallMultiplesCellBackGround": [
+        {
+          "properties": {
+            "backgroundShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -618,7 +648,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -677,5 +707,66 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "398df21ad8b0e145861b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Total Ride Distance (KM)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f6f97a939866e51fc7b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Total Bookings"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7ee09a887c43d8ac5c18",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Total Booking Value"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e9812a12a4f101020144",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Rides"
+              }
+            },
+            "Property": "Is completed"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
   }
 }

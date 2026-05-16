@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "6fb0c8a717277f70c21a",
   "position": {
-    "x": 651.81818181818176,
-    "y": 476.36363636363632,
+    "x": 630,
+    "y": 462,
     "z": 2000,
-    "height": 490.90909090909088,
-    "width": 598.18181818181813,
+    "height": 505,
+    "width": 598,
     "tabOrder": 2000
   },
   "visual": {
@@ -60,11 +60,11 @@
                       "Entity": "_Calculations"
                     }
                   },
-                  "Property": "Total Booking Value"
+                  "Property": "Completed Bookings Value"
                 }
               },
-              "queryRef": "_Calculations.Total Booking Value",
-              "nativeQueryRef": "Total Booking Value"
+              "queryRef": "_Calculations.Completed Bookings Value",
+              "nativeQueryRef": "Completed Bookings Value"
             }
           ]
         }
@@ -79,7 +79,7 @@
                     "Entity": "_Calculations"
                   }
                 },
-                "Property": "Total Booking Value"
+                "Property": "Completed Bookings Value"
               }
             },
             "direction": "Descending"
@@ -314,5 +314,66 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6276655ea4a434a99a46",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Locations"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "45d01d03cdaffde7cb7a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Locations"
+              }
+            },
+            "Property": "Region Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fe50e0963277296bee48",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Completed Bookings Value"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dd5d45d291f282dc8cfb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Rides"
+              }
+            },
+            "Property": "Is completed"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
   }
 }

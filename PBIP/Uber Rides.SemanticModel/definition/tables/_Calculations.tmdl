@@ -143,6 +143,17 @@ table _Calculations
 		displayFolder: Revenue
 		lineageTag: dd74a84d-9d74-414f-8b11-119d205eac26
 
+	measure 'Completed Bookings Value' = ```
+			
+			CALCULATE(
+				[Total Booking Value],
+				'Rides'[Booking Status] =  "Completed" 
+			)
+			```
+		formatString: 0
+		displayFolder: Revenue
+		lineageTag: dfc66cae-3bb7-4fe5-84e7-3a9f68c54084
+
 	partition _Calculations = m
 		mode: import
 		source =

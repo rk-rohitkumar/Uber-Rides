@@ -243,6 +243,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "8cf9f9f6097ba9d0dc24",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Total Booking Value"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "694a3f54355e67f495b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Locations"
+              }
+            },
+            "Property": "Region Group"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

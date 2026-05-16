@@ -255,6 +255,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "5e626cc77070ba11b97a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Locations"
+              }
+            },
+            "Property": "Region Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "55416054c2038fd840d9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Total Booking Value"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
