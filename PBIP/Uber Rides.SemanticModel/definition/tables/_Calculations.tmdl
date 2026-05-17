@@ -179,6 +179,65 @@ table _Calculations
 		displayFolder: Revenue
 		lineageTag: ce154716-ebf3-48ea-bf7b-1a913cc029cf
 
+	measure 'Unique Customers' = DISTINCTCOUNT('Rides'[Customer ID])
+		formatString: #,0
+		displayFolder: Customer
+		lineageTag: b074d4ec-bf16-4a9a-ac80-c0b0757e0490
+
+	measure 'Avg Trips per Customer' = ```
+			
+			DIVIDE(
+			    [Total Bookings], 
+			    CALCULATE(DISTINCTCOUNT('Rides'[Customer ID]), 'Rides'[Booking Status] = "Completed")
+			)
+			```
+		formatString: #,0.00
+		displayFolder: Customer
+		lineageTag: 5019c36c-3802-4eb2-a69c-3332618ba1b3
+
+	measure 'Cancellation Rate by Payment Method' = ```
+			
+			DIVIDE(
+			    [Non-Completed Bookings], 
+			    CALCULATE([Total Bookings], ALL('Rides'[Payment Method])) 
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Bookings
+		lineageTag: 6042037a-bfe0-4b92-ac77-a053b850350c
+
+	measure 'Potential Revenue Lost (Cancelled)' =
+			
+			CALCULATE(
+			    SUM('Rides'[Booking Value]),
+			    'Rides'[Booking Status] <> "Completed"
+			)
+		formatString: #,0
+		displayFolder: Revenue
+		lineageTag: 5eb02bf6-eebe-4d8b-8d45-850c8d4ad7a7
+
+	measure 'Revenue Loss Ratio' =
+			
+			DIVIDE(
+			    [Potential Revenue Lost (Cancelled)],
+			    [Total Booking Value]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Revenue
+		lineageTag: 1f5f1403-c0f5-4b8c-aa27-fca6604e9231
+
+	measure 'Avg Ride Distance per Completion (KM)' = ```
+			
+			DIVIDE(
+			    [Total Ride Distance (KM)],
+			    [Completed Bookings] 
+			)
+			```
+		displayFolder: Distance
+		lineageTag: cf856855-a855-4bed-9662-f33529ab5eb8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Calculations = m
 		mode: import
 		source =

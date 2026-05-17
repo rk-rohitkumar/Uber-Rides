@@ -1,0 +1,372 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "1b8f9f1335b4752892a5",
+  "position": {
+    "x": 60,
+    "y": 83.333333333333343,
+    "z": 0,
+    "height": 490,
+    "width": 990,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Locations"
+                    }
+                  },
+                  "Property": "Region Group"
+                }
+              },
+              "queryRef": "Locations.Region Group",
+              "nativeQueryRef": "Region Group"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Unique Customers"
+                }
+              },
+              "queryRef": "_Calculations.Unique Customers",
+              "nativeQueryRef": "Unique Customers"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Avg Trips per Customer"
+                }
+              },
+              "queryRef": "_Calculations.Avg Trips per Customer",
+              "nativeQueryRef": "Avg Trips per Customer"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Cancellation Rate by Payment Method"
+                }
+              },
+              "queryRef": "_Calculations.Cancellation Rate by Payment Method",
+              "nativeQueryRef": "Cancellation Rate by Payment Method"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Rides"
+                    }
+                  },
+                  "Property": "Payment Method"
+                }
+              },
+              "queryRef": "Rides.Payment Method",
+              "nativeQueryRef": "Payment Method"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Potential Revenue Lost (Cancelled)"
+                }
+              },
+              "queryRef": "_Calculations.Potential Revenue Lost (Cancelled)",
+              "nativeQueryRef": "Potential Revenue Lost (Cancelled)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Revenue Loss Ratio"
+                }
+              },
+              "queryRef": "_Calculations.Revenue Loss Ratio",
+              "nativeQueryRef": "Revenue Loss Ratio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Avg Ride Distance per Completion (KM)"
+                }
+              },
+              "queryRef": "_Calculations.Avg Ride Distance per Completion (KM)",
+              "nativeQueryRef": "Avg Ride Distance per Completion (KM)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Calculations"
+                  }
+                },
+                "Property": "Cancellation Rate by Payment Method"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.66667155177784D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.Cancellation Rate by Payment Method"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91.33333528077631D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.Avg Trips per Customer"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.16666764616409D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.Unique Customers"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102.16665608023402D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.Potential Revenue Lost (Cancelled)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "82.33332991514553D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.Revenue Loss Ratio"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "118.99999478866471D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.Avg Ride Distance per Completion (KM)"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "90c26673dfd8546d5214",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Locations"
+              }
+            },
+            "Property": "Region Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3625e94d067213ad27ee",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Unique Customers"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a05f83b5cfa051dc877b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Avg Trips per Customer"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "baf059956eadf4b8cd3a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Cancellation Rate by Payment Method"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fbaa0f86ad3af39831d1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Rides"
+              }
+            },
+            "Property": "Payment Method"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "02be9ef2af04baf366ed",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Potential Revenue Lost (Cancelled)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3acc50f8e71b33098c65",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Revenue Loss Ratio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3af812a023af275c2eee",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Avg Ride Distance per Completion (KM)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
