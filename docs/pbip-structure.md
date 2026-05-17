@@ -1,8 +1,9 @@
-# PBIP structure
+# PBIP & TMDL Format Standards - ARCHITECTURE REFERENCE (Updated)
 
+**Note:** This file serves as a technical appendix supporting the primary documentation structure found at [docs/README_Documentation_Index.md]. It details the source-control-friendly metadata formats used in this project.
 ## Purpose
 
-This document explains how the PBIP project is physically organized in the repository.
+This document explains how the PBIP project is physically organized in the repository, with a focus on structured, machine-readable metadata components (like TMDL).
 
 ## Entry point
 
@@ -12,38 +13,3 @@ This document explains how the PBIP project is physically organized in the repos
 
 ## Folder map
 
-```text
-TODO: paste a concise folder tree here
-```
-
-## Report layer
-
-Document:
-- report folder purpose
-- page definitions
-- visual metadata locations
-- theme / resources / custom visual references
-- important report configuration files
-
-## Semantic model layer
-
-Document:
-- semantic model folder purpose
-- where tables, measures, relationships, roles, perspectives, calculation items, or annotations live
-- whether the model is stored as TMDL, TMSL-style JSON, or mixed project metadata
-
-## Navigation workflow for contributors
-
-Recommended order for inspecting the project:
-1. Open PBIP / PBIR
-2. Identify report folder
-3. Identify semantic model
-4. Review docs/
-5. Inspect only the files relevant to the task
-
-## Change impact notes
-
-Document examples such as:
-- renaming a measure may require report updates
-- column renames may affect model and report references
-- visual label changes may require report metadata updates
