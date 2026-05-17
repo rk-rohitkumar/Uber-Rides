@@ -13,11 +13,19 @@ Typical items in the PBIP root:
 
 The `.pbip` file usually points to one report folder, but you can have multiple reports and semantic models in the same project folder.[file:137]
 
-## Semantic model folder (`<name>.SemanticModel`)
+UBER RIDES/
+├── Uber Rides.Report/
+│   └── definition.pbir
+├── Uber Rides.SemanticModel/
+│   └── definition.pbism
+├── .gitignore
+└── Uber Rides.pbip
 
-Important files and subfolders:[file:137]
+## Semantic model folder (`Uber Rides.SemanticModel`)
 
-- `definition.pbism` – overall semantic model definition and core settings, including supported definition formats via the `version` property.[file:137]
+A collection of files and folders that represent a Power BI semantic model.:[file:137]
+
+- `definition` – overall semantic model definition and core settings, including supported definition formats via the `version` property.[file:137]
 - `model.bim` – Tabular Model Scripting Language (TMSL) database object when the model uses TMSL.[file:137]
 - `definition/` – Tabular Model Definition Language (TMDL) folder when the model uses TMDL.[file:137]
 - `diagramLayout.json` / `semanticModelDiagramLayout.json` – diagram metadata; not supported for external editing during preview.[file:137]
@@ -27,9 +35,9 @@ Important files and subfolders:[file:137]
 - `cache.abf` – Analysis Services backup file containing cached data and model; should be ignored in source control.[file:137]
 - `.platform` – Fabric Git integration file for connecting the item to a workspace/repo.[file:137]
 
-## Report folder (`<name>.Report`)
+## Report folder (`Uber Rides.Report`)
 
-Important files and subfolders:[file:137]
+A collection of files and folders that represent a Power BI report:[file:137]
 
 - `definition.pbir` – overall report definition and dataset reference; indicates PBIR vs PBIR‑Legacy support via the `version` property.[file:137]
 - `report.json` – PBIR‑Legacy report metadata; not supported for external editing during preview.[file:137]
