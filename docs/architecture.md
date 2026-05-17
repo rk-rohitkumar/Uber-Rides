@@ -1,4 +1,3 @@
-
 ## Project Architecture and Design Notes
 
 
@@ -8,3 +7,4 @@
 
 **Goal:** To ensure that all core performance indicators are immediately visible upon loading, requiring minimal user interaction.
 **Overall Vision:** The goal of this project is to create a highly focused, executive-level Power BI dashboard.
+
