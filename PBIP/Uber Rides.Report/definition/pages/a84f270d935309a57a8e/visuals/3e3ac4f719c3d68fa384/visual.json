@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "Net_Revenue_KPI_Card",
   "position": {
-    "x": 22,
-    "y": 54,
+    "x": 21,
+    "y": 76,
     "z": 5000,
-    "height": 383,
-    "width": 1235,
+    "height": 389,
+    "width": 1227,
     "tabOrder": 0
   },
   "visual": {
@@ -462,6 +462,34 @@
             "id": "field-fd08fe5c-3318-dc5a-31f7-92e3868adf8a",
             "order": 0
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Avg Ride Distance per Completion (KM)"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "_Calculations.KM Ride Distance",
+            "id": "field-258195ed-6945-b630-f2bd-6d835e13b2a4",
+            "order": 0
+          }
         }
       ],
       "referenceLabelTitle": [
@@ -507,6 +535,42 @@
           "selector": {
             "metadata": "_Calculations.$ Booking value",
             "id": "field-fd08fe5c-3318-dc5a-31f7-92e3868adf8a"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.KM Ride Distance"
+          }
+        },
+        {
+          "properties": {
+            "titleContentType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'custom'"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Ride Distance'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Calculations.KM Ride Distance",
+            "id": "field-258195ed-6945-b630-f2bd-6d835e13b2a4"
           }
         }
       ],
@@ -603,7 +667,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

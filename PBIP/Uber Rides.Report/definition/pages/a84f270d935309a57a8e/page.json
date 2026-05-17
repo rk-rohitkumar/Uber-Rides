@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "a84f270d935309a57a8e",
   "displayName": "New",
-  "displayOption": "FitToPage",
-  "height": 7200,
+  "displayOption": "ActualSize",
+  "height": 2700,
   "width": 1280,
   "objects": {
     "outspace": [

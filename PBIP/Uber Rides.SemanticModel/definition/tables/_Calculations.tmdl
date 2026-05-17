@@ -29,7 +29,7 @@ table _Calculations
 			
 				SUM('Rides'[Booking Value])
 			```
-		formatString: "₹"#,0;#,0\ -"₹";"₹"#,0
+		formatString: "₹"\ #,0;-"₹"\ #,0;"₹"\ #,0
 		displayFolder: Revenue
 		lineageTag: 5e777f0c-4d2d-4d12-8c8a-555c8e8476fd
 
@@ -41,7 +41,7 @@ table _Calculations
 
 		changedProperty = FormatString
 
-		annotation PBI_FormatHint = {"currencyCulture":"mr-IN"}
+		annotation PBI_FormatHint = {"currencyCulture":"mai-IN"}
 
 	measure 'Non-Completion Rate' =
 			DIVIDE(
@@ -113,9 +113,11 @@ table _Calculations
 				'Rides'[Booking Status] =  "Completed" 
 			)
 			```
-		formatString: 0
+		formatString: "₹"\ #,0;-"₹"\ #,0;"₹"\ #,0
 		displayFolder: Revenue
 		lineageTag: dfc66cae-3bb7-4fe5-84e7-3a9f68c54084
+
+		annotation PBI_FormatHint = {"currencyCulture":"mai-IN"}
 
 	measure 'Unique Customers' = DISTINCTCOUNT('Rides'[Customer ID])
 		formatString: #,0
