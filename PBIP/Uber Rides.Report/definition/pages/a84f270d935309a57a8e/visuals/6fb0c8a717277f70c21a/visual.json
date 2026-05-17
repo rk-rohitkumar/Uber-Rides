@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "6fb0c8a717277f70c21a",
   "position": {
-    "x": 629,
-    "y": 462,
-    "z": 2000,
-    "height": 505,
-    "width": 598,
+    "x": 631.31313131313129,
+    "y": 461.61616161616161,
+    "z": 1000,
+    "height": 506.06060606060606,
+    "width": 626.26262626262621,
     "tabOrder": 2000
   },
   "visual": {
@@ -216,6 +216,174 @@
               }
             }
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Locations"
+                          }
+                        },
+                        "Property": "Region Group"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Delhi'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Locations"
+                          }
+                        },
+                        "Property": "Region Group"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Gurgaon'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Locations"
+                          }
+                        },
+                        "Property": "Region Group"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Noida'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Locations"
+                          }
+                        },
+                        "Property": "Region Group"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Other'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "categoryAxis": [
@@ -318,48 +486,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "6276655ea4a434a99a46",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Locations"
-              }
-            },
-            "Property": "Region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "45d01d03cdaffde7cb7a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Locations"
-              }
-            },
-            "Property": "Region Group"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "fe50e0963277296bee48",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Completed Bookings Value"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "dd5d45d291f282dc8cfb",
         "field": {
           "Column": {
@@ -373,6 +499,48 @@
         },
         "type": "Categorical",
         "howCreated": "User"
+      },
+      {
+        "name": "29b487b6a06d6a9ffa0f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Locations"
+              }
+            },
+            "Property": "Region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "454d063c50ad9b5a69da",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Locations"
+              }
+            },
+            "Property": "Region Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c031cc3ddde1c93f1abc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Calculations"
+              }
+            },
+            "Property": "Completed Bookings Value"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

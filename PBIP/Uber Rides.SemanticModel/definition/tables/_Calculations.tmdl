@@ -154,6 +154,31 @@ table _Calculations
 		displayFolder: Revenue
 		lineageTag: dfc66cae-3bb7-4fe5-84e7-3a9f68c54084
 
+	measure 'Top Region' = ```
+			
+			VAR __MaxBookings = 
+			    CALCULATETABLE(
+			        SUMMARIZE(
+			            ALL('Locations'), -- Analyze ALL regions, ignoring any current filters on the Locations table
+			            'Locations'[Region],
+			            "Total Booking Value", SUM('Rides'[Booking Value]) -- Calculate total bookings for each region
+			        )
+			
+			    )
+			
+			VAR __TopRegionRow = 
+			    SELECTCOLUMNS(
+			        TOPN(1, __MaxBookings, [Total Booking Value], DESC), -- Select the top row based on the calculated value
+			        "Region", 'Locations'[Region]
+			    )
+			
+			RETURN 
+			    -- Return the name from that top row
+			    MAXX(__TopRegionRow, [Region])
+			```
+		displayFolder: Revenue
+		lineageTag: ce154716-ebf3-48ea-bf7b-1a913cc029cf
+
 	partition _Calculations = m
 		mode: import
 		source =
