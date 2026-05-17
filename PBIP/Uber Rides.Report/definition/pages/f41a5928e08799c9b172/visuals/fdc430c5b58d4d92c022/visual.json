@@ -217,21 +217,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "7.74D"
+                  "Value": "0D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "28.802122681762D"
+                  "Value": "0D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "77.24080000000004D"
+                  "Value": "0D"
                 }
               }
             }

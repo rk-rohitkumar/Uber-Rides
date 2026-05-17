@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "124f1fef8a19d846beec",
+  "position": {
+    "x": 113.29919531821508,
+    "y": 69.290416971470378,
+    "z": 1001,
+    "height": 233.15288953913682,
+    "width": 585.22311631309447,
+    "tabOrder": 1001
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "autoSelectVisualType": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Top Region"
+                }
+              },
+              "queryRef": "_Calculations.Top Region",
+              "nativeQueryRef": "Top Region"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Calculations"
+                    }
+                  },
+                  "Property": "Top Region by booking value"
+                }
+              },
+              "queryRef": "_Calculations.Top Region by booking value",
+              "nativeQueryRef": "Top Region by booking value"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Calculations"
+                  }
+                },
+                "Property": "Top Region"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -2,5 +2,19 @@
 // Right-click on tables, columns, or measures in the data pane to access quick queries, or ask Copilot for help writing DAX.
 
 // Select "Run" to try this sample DAX query.
-EVALUATE
-    TOPN(100, 'Locations')
+DEFINE
+    /// Returns the top category label based on a supplied grouping column and value expression
+    FUNCTION TopByValue =
+    (
+        pGroup : ANYREF EXPR,
+        pValue : SCALAR VARIANT EXPR
+    ) =>
+    VAR __Summary =
+        ADDCOLUMNS(
+            ALL( pGroup ),
+            "__Metric", CALCULATE( pValue )
+        )
+    VAR __TopRow =
+        TOPN( 1, __Summary, [__Metric], DESC )
+    RETURN
+        MAXX( __TopRow, pGroup )

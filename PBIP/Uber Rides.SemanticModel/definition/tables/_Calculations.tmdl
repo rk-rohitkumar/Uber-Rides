@@ -242,6 +242,20 @@ table _Calculations
 		displayFolder: Revenue
 		lineageTag: 2ac0b449-7e4f-4b3f-a2df-3762ba0b4dcc
 
+	measure 'Top Region by booking value' = ```
+			
+			    TopByValue( Locations[Region], [Total Booking Value] )
+			```
+		displayFolder: Revenue
+		lineageTag: 048bc05f-8271-4a5b-ae9b-d84e043aaeb2
+
+	measure 'title Top Region by revenue loss ratio' = ```
+			
+			    TopByValue( Locations[Region], [Revenue Loss Ratio] ) & " has the highest revenue loss ratio"
+			```
+		displayFolder: Revenue
+		lineageTag: 43d19fa2-4a6d-48ff-a3dd-c977b461fcdb
+
 	partition _Calculations = m
 		mode: import
 		source =

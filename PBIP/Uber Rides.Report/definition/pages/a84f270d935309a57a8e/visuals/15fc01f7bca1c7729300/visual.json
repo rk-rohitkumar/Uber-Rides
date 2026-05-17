@@ -71,15 +71,15 @@
                                       "Source": "_"
                                     }
                                   },
-                                  "Property": "Region with maximum booking value"
+                                  "Property": "Top Region by booking value"
                                 },
-                                "Name": "_Calculations.Region with maximum booking value"
+                                "Name": "_Calculations.Top Region by booking value"
                               }
                             ]
                           }
                         }
                       },
-                      "Property": "_Calculations.Region with maximum booking value"
+                      "Property": "_Calculations.Top Region by booking value"
                     }
                   },
                   "IncludeAllTypes": 1
@@ -90,7 +90,7 @@
                     "kind": "NaturalLanguage",
                     "annotation": {
                       "name": "Best_Region",
-                      "utterance": "Region with maximum booking value"
+                      "utterance": "Top Region by booking value"
                     }
                   }
                 }

@@ -1,0 +1,19 @@
+/// Returns the top category label based on a supplied grouping column and value expression
+function TopByValue = ```
+		
+		    (
+		        pGroup : ANYREF EXPR,
+		        pValue : SCALAR VARIANT EXPR
+		    ) =>
+		    VAR __Summary =
+		        ADDCOLUMNS(
+		            ALL( pGroup ),
+		            "__Metric", CALCULATE( pValue )
+		        )
+		    VAR __TopRow =
+		        TOPN( 1, __Summary, [__Metric], DESC )
+		    RETURN
+		        MAXX( __TopRow, pGroup )
+		```
+	lineageTag: e3751f12-7604-4ccf-bd73-748003b556fa
+
