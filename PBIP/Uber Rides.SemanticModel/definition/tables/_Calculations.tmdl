@@ -238,6 +238,10 @@ table _Calculations
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'title revenue loss ratio' = FORMAT( [Revenue Loss Ratio], "#0.0%" ) & " revenue lost due to cancellations"
+		displayFolder: Revenue
+		lineageTag: 2ac0b449-7e4f-4b3f-a2df-3762ba0b4dcc
+
 	partition _Calculations = m
 		mode: import
 		source =

@@ -4,8 +4,8 @@ Use sources in this order of authority:
 
 1. PBIP / PBIR / report / semantic model files in the repository
 2. Repository documentation under docs/
-3. Root README and project markdown files
-4. Existing comments, annotations, and naming conventions in model/report files
+3. Root README files
+4. Existing comments, annotations, and naming conventions in docs/ files
 5. User instructions in the current chat
 
 Rules:
