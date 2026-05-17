@@ -8,11 +8,6 @@ table Rides
 		summarizeBy: none
 		sourceColumn: Date
 
-		variation Variation
-			isDefault
-			relationship: 86276238-1a75-41e0-8d2e-b530b54e520b
-			defaultHierarchy: LocalDateTable_ecc654a2-2a0b-4b5d-a532-51f9e8a12f01.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -211,14 +206,24 @@ table Rides
 
 		annotation SummarizationSetBy = Automatic
 
+	column Hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 60f094bd-0071-4098-8361-178eea2462c7
+		summarizeBy: sum
+		sourceColumn: Hour
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Rides = m
 		mode: import
 		queryGroup: Final
 		source =
 				let
-				    Source = EnrichedData
+				    Source = EnrichedData,
+				    #"Inserted Hour" = Table.AddColumn(Source, "Hour", each Time.Hour([Time]), Int64.Type)
 				in
-				    Source
+				    #"Inserted Hour"
 
 	annotation PBI_NavigationStepName = Navigation
 

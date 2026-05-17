@@ -26,19 +26,18 @@ queryGroup Parameters
 
 	annotation PBI_QueryGroupOrder = 4
 
-annotation PBI_QueryOrder = ["RidesSource","CleanedData","Locations","Location-Region-Latitude-Longitude","Locations_Blank","Location-Region-Latitude-Longitude (1)","DenormalisedData","EnrichedData","Rides","_Calculations","pRidesData","Profile_Locations","Profile_Rides","pLocationData","pLocationData1"]
+annotation PBI_QueryOrder = ["RidesSource","CleanedData","Locations","Location-Region-Latitude-Longitude","Locations_Blank","Location-Region-Latitude-Longitude (1)","DenormalisedData","EnrichedData","Rides","_Calculations","pRidesData","Profile_Locations","Profile_Rides","pLocationData","pLocationData1","DateTable"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["TMDLView_Desktop","DaxQueryView_Desktop","DevMode"]
 
-ref table DateTableTemplate_55b74964-5a93-4422-a747-33724b5db084
 ref table Locations
 ref table Rides
-ref table LocalDateTable_ecc654a2-2a0b-4b5d-a532-51f9e8a12f01
 ref table _Calculations
 ref table Profile_Locations
 ref table Profile_Rides
+ref table DateTable
 
 ref cultureInfo en-US
 

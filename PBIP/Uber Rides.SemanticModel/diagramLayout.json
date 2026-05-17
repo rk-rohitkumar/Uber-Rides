@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 200.686567164179,
-        "y": 0
+        "x": 339.85074626865674,
+        "y": 14.5
       },
       "nodes": [
         {
           "location": {
             "x": 227,
-            "y": 18
+            "y": 27
           },
           "nodeIndex": "Locations",
           "nodeLineageTag": "28517119-6398-469a-a219-ee3a4824e4c7",
@@ -19,12 +19,12 @@
             "height": 236,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
             "x": 717.32835820895525,
-            "y": 56.880597014925371
+            "y": 65.880597014925371
           },
           "nodeIndex": "Rides",
           "nodeLineageTag": "d6bb245a-a4d6-43ab-90e2-cebbef74a055",
@@ -32,12 +32,12 @@
             "height": 485.37313432835822,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 4
         },
         {
           "location": {
             "x": 832,
-            "y": 550.75373134328356
+            "y": 559.75373134328356
           },
           "nodeIndex": "_Calculations",
           "nodeLineageTag": "ef7af1f4-2030-4936-84ae-490063667ad8",
@@ -45,12 +45,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 5
         },
         {
           "location": {
             "x": 125.88059701492534,
-            "y": 389.15298507462688
+            "y": 398.15298507462688
           },
           "nodeIndex": "Profile_Locations",
           "nodeLineageTag": "86721177-96b7-47fd-a23c-fb3fe54985cd",
@@ -58,12 +58,12 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
             "x": 1173,
-            "y": 224.37686567164178
+            "y": 233.37686567164178
           },
           "nodeIndex": "Profile_Rides",
           "nodeLineageTag": "5659a889-74cb-40e2-8017-a4fb8c16af5c",
@@ -71,7 +71,20 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1331.1194029850747,
+            "y": 215.37686567164178
+          },
+          "nodeIndex": "DateTable",
+          "nodeLineageTag": "0f91d107-1369-4f7f-bdc1-9aeb7f8de3db",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 6
         }
       ],
       "name": "All tables",

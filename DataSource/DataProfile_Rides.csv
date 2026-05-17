@@ -12,8 +12,10 @@ Date,01-01-2024,30-12-2024,30-06-2024,,150000,0,365
 Driver Cancellation Reason,Customer related issue,null,,,150000,0,5
 Driver Ratings,3,5,4.230992473,0.436871469,150000,57000,22
 Drop.LocationKey,0,175,87.50634,50.80258031,150000,0,176
+Hour,0,23,14.03411333,5.416905503,150000,0,24
 Incomplete Rides,0,1,0.06,0.237487633,150000,0,2
 Incomplete Rides Reason,Customer Demand,null,,,150000,0,4
+Is completed,FALSE,TRUE,,,150000,0,2
 Payment Method,Cash,null,,,150000,0,6
 Pickup.LocationKey,0,175,87.57322667,50.80095842,150000,0,176
 Reason for cancelling by Customer,AC is not working,null,,,150000,0,6

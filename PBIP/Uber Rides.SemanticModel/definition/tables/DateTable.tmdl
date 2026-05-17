@@ -1,0 +1,127 @@
+table DateTable
+	lineageTag: 0f91d107-1369-4f7f-bdc1-9aeb7f8de3db
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: c0315c00-7649-4b05-a74f-8110fe1877ec
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 86538b97-a266-4b08-846c-ed14608b1f17
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: f8b9a07d-7f70-4b2f-933d-d66a3c27fed1
+		summarizeBy: sum
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 21666a29-83e4-4bee-be97-55eadc417e00
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: c071c8d5-a95c-4388-8d0d-bd82f06b6e57
+		summarizeBy: none
+		sourceColumn: DayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 104f309a-3ed0-41d6-828a-fa7ab83140dc
+		summarizeBy: sum
+		sourceColumn: WeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthSortKey
+		dataType: double
+		lineageTag: dc32521f-a857-4617-b9de-8140e2d2966b
+		summarizeBy: count
+		sourceColumn: YearMonthSortKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsWeekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 14719161-705c-4e45-a01d-1bc99831a281
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_Quarter
+		dataType: string
+		lineageTag: 564f258a-9daf-472c-9835-61d526c925c9
+		summarizeBy: none
+		sourceColumn: Year_Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DateTable = m
+		mode: import
+		queryGroup: DataSources
+		source = ```
+				let
+				
+				    // 2. Generate the list of all dates within the range (The core calendar)
+				    Source = List.Dates( #date(2024,1,1) , Number.From(#date(2024,12,31) - #date(2024,1,1)) + 1, #duration(1, 0, 0, 0)),
+				
+				    // 3. Convert the list into a table structure
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), {"Date"}, null, ExtraValues.Error),
+				
+				   
+				    // Add Year, Month Number, Quarter, etc., as new columns using DateTime functions
+				    #"Added Year" = Table.AddColumn(#"Converted to Table", "Year", each Date.Year([Date]), Int64.Type),
+				    #"Added MonthNumber" = Table.AddColumn(#"Added Year", "MonthNumber", each Date.Month([Date]), Int64.Type),
+				    #"Added Quarter" = Table.AddColumn(#"Added MonthNumber", "Quarter", each "Q" & Text.From(Date.QuarterOfYear([Date])), type text),
+				    #"Added DayName" = Table.AddColumn(#"Added Quarter", "DayName", each Date.DayOfWeekName([Date]), type text),
+				    #"Added WeekNumber" = Table.AddColumn(#"Added DayName", "WeekNumber", each Date.WeekOfYear([Date]), Int64.Type),
+				
+				    // Create the Sort Key (Crucial for correct grouping/sorting in reports)
+				    #"Added YearMonthSortKey" = Table.AddColumn(#"Added WeekNumber", "YearMonthSortKey", 
+				        each ([Year] * 100 + [MonthNumber]), type number),
+				
+				    // Add Boolean Flags
+				    #"Added IsWeekend" = Table.AddColumn(#"Added YearMonthSortKey", "IsWeekend", 
+				        each if Date.DayOfWeek([Date], Day.Sunday) >= Day.Saturday then true else false, type logical),
+				        
+				    // Optional: Create a 'Year-Quarter' combined field for reporting ease
+				    #"Added YearQuarterGroup" = Table.AddColumn(#"Added IsWeekend", "Year_Quarter", 
+				        each Text.From([Year]) & "-" & [Quarter], type text),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added YearQuarterGroup",{{"Date", type date}})
+				
+				in
+				    #"Changed Type"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
