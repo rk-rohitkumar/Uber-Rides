@@ -21,7 +21,8 @@ These measures provide insights into service efficiency and customer behavior:
 | **Completion Rate** | `DIVIDE([Completed Bookings], [Total Bookings])` | Percentage of total bookings that were successfully completed. | Key KPI for overall service reliability and demand fulfillment. |
 | **Non-Completion Rate** | `DIVIDE([Non-Completed Bookings], [Total Bookings])` | Percentage of total bookings that failed to complete. | Measures the proportion of lost or incomplete trips. |
 | **Average Revenue per Completed Booking** | `DIVIDE([Total Booking Value], ([Total Bookings] - [Non-Completed Bookings]))` | The average revenue generated *per* trip counted as completed (or non-cancelled). | Provides a true picture of realized value, filtering out failed bookings. |
-| **Avg Trips per Customer** | `DIVIDE([Total Bookings], CALCULATE(DISTINCTCOUNT('Rides'[Customer ID]), 'Rides'[Booking Status] = "Completed"))` | The average number of total bookings per unique customer who completed at least one trip. | Measures customer engagement frequency. |
+
+| **Avg Trips per Customer** | `DIVIDE([Total Bookings], CALCULATE(DISTINCTCOUNT('Rides'[Customer ID]), 'Rides'[Booking Status] = "Completed"))` | The average number of all recorded bookings (total volume) divided by the count of unique customers who successfully completed at least one trip. | Measures how many total trips a fully engaged customer generates on average. |
 
 ## Financial Risk & Loss Metrics (Monetized Impact)
 

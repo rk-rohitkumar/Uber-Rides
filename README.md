@@ -13,10 +13,14 @@ This Power BI report shows analysis of UBER rides in Delhi NCR region during the
 - **Dimension Table:** `Locations` (Geographical details).
 
 ## Key Measures & Report Logic
-The report relies on measures defined within the semantic model, which are directly linked to the following calculations:
-- **Total Bookings:** `DISTINCTCOUNT(Rides[Booking ID])`
-- **Booking Value:** `SUM('Rides'[Booking Value])`
-- **Top Region Name:** Calculated measure identifying the region with the highest total booking value across all records.
-- **Completion Rate:** Calculated based on status filtering within the Fact table.
+The report utilizes a comprehensive set of advanced metrics defined in the semantic model, covering volume, financial performance, efficiency rates, and operational analysis.
+
+Key categories include:
+- **Volume & Core Metrics:** Total Bookings, Completed/Non-Completed Booking counts, Unique Customers.
+- **Financial Performance:** Total Booking Value, Potential Revenue Lost (Cancelled), Completion Rate, etc.
+- **Efficiency Analysis:** Advanced KPIs like Average Revenue per Completed Booking and Avg Trips per Customer.
+- **Geographic Insights:** Metrics for identifying top regions by value or volume.
+
+For a detailed breakdown of all calculations, formulas, and business definitions, please refer to `docs/Measures_Reference.md`.
 
 ## Business Rules & Constraints
