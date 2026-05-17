@@ -4,8 +4,8 @@
 
 Use these sources in this order when reasoning about PBIP projects:
 
-1. `docs/pbip/*` – Microsoft-derived PBIP, PBIR, and TMDL guidance.[file:137]
-2. `docs/project/*` – repository-specific architecture, naming, and business rules.
+1. `PBIP/*` – Microsoft-derived PBIP, PBIR, and TMDL guidance.[file:137]
+2. `docs/*` – repository-specific architecture, naming, and business rules.
 3. Existing repository files (report and semantic model definitions, scripts, etc.).
 
 If internal model knowledge conflicts with these documents, follow the documents.
