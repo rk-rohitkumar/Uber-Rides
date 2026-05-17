@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "15fc01f7bca1c7729300",
+  "name": "5d79c5fbbcc228b46132",
   "position": {
-    "x": 22.222222222222221,
-    "y": 461.61616161616161,
-    "z": 3000,
-    "height": 116.16161616161617,
-    "width": 573.73737373737379,
-    "tabOrder": 4000
+    "x": 22.5,
+    "y": 982.5,
+    "z": 7000,
+    "height": 116.25,
+    "width": 573.75,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,21 +19,13 @@
               {
                 "textRuns": [
                   {
-                    "value": {
-                      "propertyIdentifier": {
-                        "objectName": "values",
-                        "propertyName": "expr"
-                      },
-                      "selector": {
-                        "id": "Best_Region"
-                      }
-                    },
+                    "value": "UPI ",
                     "textStyle": {
                       "fontSize": "24pt"
                     }
                   },
                   {
-                    "value": " is the favourite destination. Most rides end up here.",
+                    "value": "is the most preferred payment method.",
                     "textStyle": {
                       "fontSize": "18pt"
                     }
@@ -71,15 +63,15 @@
                                       "Source": "_"
                                     }
                                   },
-                                  "Property": "Region with maximum booking value"
+                                  "Property": "Top Region"
                                 },
-                                "Name": "_Calculations.Region with maximum booking value"
+                                "Name": "_Calculations.Top Region"
                               }
                             ]
                           }
                         }
                       },
-                      "Property": "_Calculations.Region with maximum booking value"
+                      "Property": "_Calculations.Top Region"
                     }
                   },
                   "IncludeAllTypes": 1
@@ -90,7 +82,7 @@
                     "kind": "NaturalLanguage",
                     "annotation": {
                       "name": "Best_Region",
-                      "utterance": "Region with maximum booking value"
+                      "utterance": "top region"
                     }
                   }
                 }

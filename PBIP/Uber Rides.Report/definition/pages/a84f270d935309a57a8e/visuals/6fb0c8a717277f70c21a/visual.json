@@ -461,6 +461,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -474,6 +481,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Completed Bookings by Region'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -499,48 +513,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "29b487b6a06d6a9ffa0f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Locations"
-              }
-            },
-            "Property": "Region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "454d063c50ad9b5a69da",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Locations"
-              }
-            },
-            "Property": "Region Group"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c031cc3ddde1c93f1abc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Completed Bookings Value"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -724,48 +724,6 @@
         },
         "type": "Categorical",
         "howCreated": "User"
-      },
-      {
-        "name": "4faf51f58a0b0b3ea51d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Total Booking Value"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b5289e562490cf55d835",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Total Bookings"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "26046bb6d3dd1f4ae532",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Calculations"
-              }
-            },
-            "Property": "Total Ride Distance (KM)"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

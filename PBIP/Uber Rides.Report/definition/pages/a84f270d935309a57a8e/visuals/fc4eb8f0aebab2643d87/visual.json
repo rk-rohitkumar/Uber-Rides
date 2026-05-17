@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "fc4eb8f0aebab2643d87",
   "position": {
-    "x": 22.222222222222221,
-    "y": 1011.1111111111111,
+    "x": 21.25,
+    "y": 1113.75,
     "z": 0,
-    "height": 407.0707070707071,
-    "width": 573.73737373737379,
+    "height": 305,
+    "width": 575,
     "tabOrder": 1000
   },
   "visual": {
-    "visualType": "hundredPercentStackedBarChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -29,24 +29,6 @@
               "queryRef": "Rides.Payment Method",
               "nativeQueryRef": "Payment Method",
               "active": true
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Locations"
-                    }
-                  },
-                  "Property": "Region Group"
-                }
-              },
-              "queryRef": "Locations.Region Group",
-              "nativeQueryRef": "Region Group"
             }
           ]
         },
@@ -89,39 +71,6 @@
       }
     },
     "objects": {
-      "categoryAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "labels": [
         {
           "properties": {
@@ -318,6 +267,216 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Rides"
+                          }
+                        },
+                        "Property": "Payment Method"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'UPI'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Rides"
+                          }
+                        },
+                        "Property": "Payment Method"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cash'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Rides"
+                          }
+                        },
+                        "Property": "Payment Method"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Uber Wallet'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Rides"
+                          }
+                        },
+                        "Property": "Payment Method"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Credit Card'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Rides"
+                          }
+                        },
+                        "Property": "Payment Method"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Debit Card'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -329,6 +488,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Total Bookings by Payment Method'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
