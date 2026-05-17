@@ -16,8 +16,7 @@ This Power BI report shows analysis of UBER rides in Delhi NCR region during the
 The report relies on measures defined within the semantic model, which are directly linked to the following calculations:
 - **Total Bookings:** `DISTINCTCOUNT(Rides[Booking ID])`
 - **Booking Value:** `SUM('Rides'[Booking Value])`
+- **Top Region Name:** Calculated measure identifying the region with the highest total booking value across all records.
 - **Completion Rate:** Calculated based on status filtering within the Fact table.
 
 ## Business Rules & Constraints
-All report design adheres to the constraints specified in `docs/business-rules.md`, prioritizing Single-Page Consolidation and data integrity.
-

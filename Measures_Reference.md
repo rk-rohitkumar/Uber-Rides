@@ -14,7 +14,9 @@ This file serves as the definitive reference for all calculated measures used in
 - **Total Ride Distance (KM):** `SUM(Rides[Ride Distance])`
 - **Avg of Vehicle-Type Avg Ride Distance:** `AVERAGEX(SUMMARIZE(Rides, Rides[Vehicle Type]), CALCULATE(AVERAGE(Rides[Ride Distance])))`
 - **Total Booking value by pick up location:** `CALCULATE([Total Booking Value], USERELATIONSHIP(Locations[LocationKey], Rides[Pickup.LocationKey]))`
-- **Region with maximum booking value:** custom region-level calculation that identifies the `Locations[Region]` with the highest booking value.
 
-## Source Mapping
-These measures are defined in `PBIP/Uber Rides.SemanticModel/definition/tables/_Calculations.tmdl`.
+## Top Region Name (Global KPI)
+
+**Business Definition:** Calculates the name of the single region that generated the highest cumulative booking value across all historical records in the dataset, regardless of any filters applied to the report page.
+
+**DAX Formula:**
