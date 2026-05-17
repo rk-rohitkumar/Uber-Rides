@@ -1,34 +1,21 @@
-# PBIP Overview
+# Project Overview - ARCHITECTURE REFERENCE (Updated)
 
-Power BI Desktop projects (PBIP) let you save a report and its semantic model as a *project* made of folders and text files instead of a single PBIX file.[file:137]
+**Note:** This file serves as a high-level summary of the PBIP project's purpose and scope, but for detailed governance, architecture structure, and contribution workflow, please refer to the primary guide:
 
-## Why PBIP exists
+[🔗 **Project Documentation Index**](docs/README_Documentation_Index.md)
 
-- Enable Git-based version control and code review on report and model definitions.[file:137]
-- Make folder structure and artifacts transparent (separate report and semantic model folders).[file:137]
-- Allow external tools like VS Code, Tabular Editor, or scripts to generate and edit metadata.[file:137]
-- Support CI/CD workflows that act directly on project files instead of opaque PBIX artifacts.[file:137]
+## Project Purpose
 
-## PBIP is in preview
+This repository manages a comprehensive Power BI (PBIP) solution designed to analyze [State specific business purpose if known]. The goal is to provide stakeholders with a single, unified dashboard that tracks key performance indicators related to the core business process.
 
-- PBIP is currently a **preview feature** in Power BI Desktop.[file:137]
-- It must be enabled under **File ▸ Options and settings ▸ Options ▸ Preview features ▸ Power BI Project (.pbip) save option**.[file:137]
-- Because it is preview, schemas and behaviors can still change, so adopt carefully for production workloads.[file:137]
+## Key Architectural Decisions
 
-## High‑level project structure
+The project employs modern, source-control-friendly formats for maximum version control integrity:
+*   **Report Layer:** Uses **PBIR (Enhanced Report Format)** for granular metadata storage.
+*   **Model Layer:** Uses **TMDL (Tabular Model Definition Language)** for a modular semantic model structure.
 
-When you save as PBIP, Desktop creates something like:
+## Contribution Guide
 
-- `MyProject.pbip` – pointer that opens a report and semantic model together.[file:137]
-- `MyProject.Report/` – report definition folder.[file:137]
-- `MyProject.SemanticModel/` – semantic model definition folder.[file:137]
-- `.gitignore` – default ignore rules for cache and local settings files.[file:137]
+Before making any changes, always consult the comprehensive guide located at [docs/README_Documentation_Index.md]. This index provides the mandatory reading order and priority list for all new contributors.
 
-Opening the `.pbip` file, or a `definition.pbir` inside a report folder, opens the report for editing and, if referenced by path, the associated semantic model.[file:137]
-
-## Key benefits
-
-- Text editor support with JSON schemas for many files.[file:137]
-- Easier reuse of report pages and semantic model tables across projects.[file:137]
-- Source-control‑ready by design, with Git and Azure DevOps examples in the docs.[file:137]
-- Programmatic generation and bulk editing of definitions (measures, visuals, pages, etc.).[file:137]
+// ... existing code ...
